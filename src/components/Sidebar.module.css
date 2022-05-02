@@ -1,0 +1,125 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  position: fixed;
+  color: rgb(129, 129, 129);
+  left: 0;
+  margin-left: 10px;
+  height: 100%;
+  width: 200px;
+  margin-top: 70px;
+  padding: 10px;
+  padding-top: 20px;
+  border-style: solid;  
+  border-color: grey;
+  border: 1;
+  border-width: 1px;
+}
+
+.title {
+  font-size: 20px;
+  align-items: center;
+  width: 99%;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  border-style: solid;  
+  border-bottom: 1;
+  border-width: 1px;
+}
+
+.home {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  height: 200px;
+  padding: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-style: solid;
+  /* border-bottom: 1px;
+  border-color: grey; */
+}
+
+.library{
+  display: flex;
+  text-align: left;
+  position: relative;
+  flex-direction: column;
+  height: 200px;
+  padding: 10px;
+  cursor: pointer;
+  border-style: solid;
+}
+
+
+.li {
+  padding-left: 20px;
+  text-transform: capitalize;
+  /* margin-bottom: 10px; */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.li.active {
+  border-left: 2px solid white;
+  padding-left: 18px;
+}
+
+.li.library {
+  cursor: unset;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.newPlaylist {
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+}
+
+.span {
+  color: #999;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+
+.button {
+  background-color: #2bcc6c;
+  color: white;
+  padding: 12.5px 30px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.input {
+  margin-bottom: 20px;
+  height: 35px;
+  padding-left: 8px;
+  font-size: 16px;
+  width: 100%;
+  color: black;
+}
+
+.ContentWrap {
+  position: absolute;
+  margin-left: 300px;
+  margin-bottom: 100px;
+  align-items: center;
+  text-align: left;
+  border-style: solid;
+  padding: 50px;
+}
+
