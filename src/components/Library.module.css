@@ -1,0 +1,56 @@
+.Library {
+    display: flex;
+    
+    width: 100%;
+    /* background: #484848; */
+    overflow-y: scroll;
+    color: rgb(57, 57, 57);
+    margin-top: 12vh;
+    margin-left: 8vw;
+  }
+  
+    ::-webkit-scrollbar {
+      width: 15px;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      background: #282828;
+    }
+  
+    .playlist-title {
+      font-size: 20px;
+      text-transform: capitalize;
+    }
+  
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+      font-size: initial;
+    }
+  
+    table tr {
+      border-bottom: 1px solid #282828;
+    }
+  
+    table td {
+      padding: 10px 0;
+    }
+  
+    i {
+      cursor: pointer;
+    }
+  
+    button {
+      background-color: #6a6a6a;
+      color: white;
+      padding: 12.5px 30px;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+    }
+  
+  
