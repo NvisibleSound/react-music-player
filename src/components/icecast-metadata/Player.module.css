@@ -1,0 +1,90 @@
+.player {
+    font-size: calc(10px + 2vmin);
+    color: white;
+    position: fixed;
+    right: 10vw;
+    width: 40vw;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    height: 100vh;
+    max-height: 4.5vw;
+    text-align: left;
+    z-index: auto;
+    top: 0;
+    border: 1px;
+    border-style: solid;
+  }
+
+  .playerText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+    flex-grow: 1;
+    color:white;
+    text-align: bottom;
+  }
+  
+    .metadata {
+      color: #fff;
+      font-size: calc(10px + 1vmin);
+    }
+
+    .stationInfoContainer {
+      display: flex;
+      flex-direction: column;
+  
+    }
+    
+    .link {
+      text-decoration: none;
+      color: rgb(87, 149, 255);
+    }
+    
+    .visitStation {
+      color: #fff;
+      font-size: calc(8px + .5vmin);
+    }
+    
+    svg {
+      /* width: calc(20px + 2vmin); */
+    }
+    
+    .codecInfo{
+      font-size: calc(8px + .5vh);
+      display: flex;
+      flex-direction:
+  
+    }
+  
+    .volume{
+      margin-right: 40px;
+      color: white;
+      position: fixed;
+      right: 0;
+    
+    }
+
+
+
+  .button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  .playPause {
+    padding: calc(5px + 1vmin);
+    padding-left: calc(10px + 1vmin);
+  }
+  
+  
+  
+  

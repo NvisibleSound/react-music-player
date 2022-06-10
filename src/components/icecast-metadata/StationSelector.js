@@ -40,6 +40,24 @@ const CodecButtonGroup = ({
 }) => {
   const codecButtonGroups = [];
 
+  for (let i = 0; i < station.endpoints.length; i += codecButtonsPerGroup) {
+    codecButtonGroups.push(
+      <div key={i / codecButtonsPerGroup} className={styles.codecs}>
+        {station.endpoints
+          .slice(i, i + codecButtonsPerGroup)
+          .map((endpoint, idx) => (
+            <CodecButton
+              key={idx}
+              station={station}
+              endpoint={endpoint}
+              codecButtonNotSelectedStyle={codecButtonNotSelectedStyle}
+              selectedStation={selectedStation}
+              changeStation={changeStation}
+            />
+          ))}
+      </div>
+    );
+  }
 
   return codecButtonGroups;
 };
@@ -56,20 +74,27 @@ const Station = ({ station, selectedStation, changeStation }) => {
   }
 
   return (
-    <label
-      className={`${styles.stationLabel} ${stationLabelStyle}`}
-      htmlFor={station.name + station.endpoints[0].codec}
-    >
-      <div className={styles.stationName}>{station.name}</div>
-      <div className={styles.stationDescription}>{station.description}</div>
-      <CodecButtonGroup
-        station={station}
-        selectedStation={selectedStation}
-        changeStation={changeStation}
-        codecButtonNotSelectedStyle={codecButtonNotSelectedStyle}
-        codecButtonsPerGroup={4}
-      />
-    </label>
+    <div className={styles.Mountpoints}>
+      <label
+        class="stationLabel"
+        className={`${styles.stationLabel} ${stationLabelStyle}`}
+        htmlFor={station.name + station.endpoints[0].codec}
+      >
+        <div className={styles.stationName}>{station.name}</div>
+        <div className={styles.stationDescription}>{station.description}
+        <div className={styles.CodecButtonGroup}>
+          <CodecButtonGroup
+          station={station}
+          selectedStation={selectedStation}
+          changeStation={changeStation}
+          codecButtonNotSelectedStyle={codecButtonNotSelectedStyle}
+          codecButtonsPerGroup={4}
+          />
+        </div>
+          
+        </div>
+      </label>
+    </div>
   );
 };
 

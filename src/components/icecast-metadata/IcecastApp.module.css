@@ -1,0 +1,25 @@
+.IcecastApp {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: left;
+    margin-left: 13vw;
+    margin-right: 5vw;
+    margin-top: 5vw;
+    background-color: black;
+
+}
+
+.player {
+    background-color: rgb(118, 118, 118);
+    height: 10vh;
+    width: 30vw;
+    top: 0;
+    display: flex;
+    align-items: center;
+    display: fixed;
+    flex-direction: row;
+    z-index: 0;
+
+
+}

@@ -1,0 +1,64 @@
+.profile {
+	display: flex;
+	position: fixed;
+	align-items: right;
+	color: rgb(53, 53, 53);
+	right: 0; 
+	text-align: center;
+	right: 0;
+	padding-right: 10px;
+	margin-top:  10px;
+	size: 4x;
+	/* font-size: 40px; */
+}
+
+
+.editProfile {
+	display: flex;
+	flex-direction: column;
+	align-items: right;
+	padding: 20px;
+	font-size: 30px;
+  background-color: grey;
+
+}
+
+.ProfileIcon {
+  display: flex;
+	font-size: calc(40px + .01vmax);
+  position: fixed;
+  margin-right: 20px;
+  color:rgb(79, 79, 79);
+  right: 0;
+
+
+}
+
+.ProfileModal {
+	height: 100vh;
+  align-items: right;
+  justify-content: right;
+  margin-top: 60px;
+}
+
+  .modal-content {
+    position: relative;
+    width: 400px;
+    background: #847b9d;
+    border-radius: 4px;
+    padding: 25px;
+  }
+
+  /* i {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+  } */
+
+  .notes {
+    font-size: 17px;
+    font-style: italic;
+    border-bottom-style: solid;
+
+  }

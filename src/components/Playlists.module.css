@@ -1,11 +1,10 @@
-.Library {
+.Playlists {
     display: flex;
     width: 100%;
     /* background: #484848; */
     overflow-y: scroll;
-    color: rgb(57, 57, 57);
-    margin-top: 12vh;
-    margin-left: 8vw;
+    color: grey;
+    
   }
   
     ::-webkit-scrollbar {

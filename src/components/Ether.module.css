@@ -1,0 +1,50 @@
+.Ether {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    color: rgb(129, 129, 129);
+    border-style: solid;  
+    border-color: grey;
+    border: 1;
+    border-width: 1px;
+  }
+
+.MyMap {
+    height: calc(100vh - 30vh);
+    width: 40vw;
+    padding: 2vw;
+    margin-left: 15vw;
+    margin-top: 10vh;
+}
+
+.title {
+    font-size: 20px;
+    align-items: center;
+    width: 99%;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    border-style: solid;  
+    border-bottom: 1;
+    border-width: 1px;
+    padding-top: 2
+  }
+
+  .locations{
+    text-align: left;
+    width: 15vw;
+    height: 36vw;
+    padding: 7px;
+    padding-top: 2vw;
+    cursor: pointer;
+    border-style: solid;
+    list-style-type: none;
+    margin-top: 2vw;
+    margin-bottom: ;
+  }
+  
+  .list {
+      padding-top: 1vw;
+      padding-bottom: 2vw
+  }

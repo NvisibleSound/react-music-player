@@ -1,8 +1,8 @@
 import styles from './profile.module.css'
 import React, { useState, useRef, useContext } from 'react'
-import { StoreContext } from './Index'
-import ProfileModal from './ProfileModal'
-import ProfileToast from './ProfileToast'
+import { StoreContext } from './index'
+import ProfileModal from './modals/profileModal'
+import ProfileToast from './toasts/profileToast'
 
 // profile pic 
 // username
@@ -47,6 +47,7 @@ const ProfileIcon = () => {
 						<ProfileModal show={profileState.modal} close={handleModal}>
 								<div onClick={editProfile}>
 										<div className={styles.editProfile}>
+											<div className={styles.notes}>add functions later</div>
 											<div>Profile</div>
 											<div>Settings</div>
 											<div>Log Out</div>

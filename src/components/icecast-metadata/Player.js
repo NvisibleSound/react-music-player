@@ -1,17 +1,8 @@
-import React, { useState, useRef, useContext } from 'react'
-
-import styles from './Mountpoints.module.css'
-import { IcecastReadableStream } from "icecast-metadata-js";
-import IcecastApp from './icecast-metadata/IcecastApp'
+import React from "react";
+import styles from "./Player.module.css";
 
 const VISIT_STATION = "Visit this station at ";
 const ICECAST_METADATA_JS_DEMO = "Icecast Metadata JS Demo";
-const SELECT_STATION = "Select a station";
-const SELECT_OR_PLAY = "Select a station or press play";
-const LOADING = "Loading...";
-const RECONNECTING = "Lost Connection. Reconnecting...";
-const CONNECTED = "Waiting for metadata...";
-
 
 const CodecInfo = React.memo(({ codecInfo }) => {
   if (codecInfo) {
@@ -31,7 +22,7 @@ const CodecInfo = React.memo(({ codecInfo }) => {
   return null;
 });
 
-const metadataInfo = ({ station, playing, toggle, metadata, codecInfo }) => {
+const Player = ({ station, playing, toggle, metadata, codecInfo }) => {
   // update metadata in title
   const title = metadata.StreamTitle || metadata.TITLE;
   document.title = title
@@ -40,7 +31,10 @@ const metadataInfo = ({ station, playing, toggle, metadata, codecInfo }) => {
 
   return (
     <div className={styles.player}>
-			<button disabled={!station} className={styles.button} onClick={toggle}>
+      <div>
+        NOW PLAYING:
+      </div>
+      {/* <button disabled={!station} className={styles.button} onClick={toggle}>
         {playing ? (
           <svg className={styles.playPause} viewBox="0 0 450 525">
             <path
@@ -56,7 +50,7 @@ const metadataInfo = ({ station, playing, toggle, metadata, codecInfo }) => {
             />
           </svg>
         )}
-      </button>
+      </button> */}
       <div className={styles.playerText}>
         <div className={styles.metadata}>
           {typeof metadata === "object"
@@ -81,32 +75,13 @@ const metadataInfo = ({ station, playing, toggle, metadata, codecInfo }) => {
               </a>
             </div>
           )}
-          <CodecInfo codecInfo={codecInfo} />
+          <CodecInfo 
+          className={styles.codecInfo}
+          codecInfo={codecInfo} />
         </div>
       </div>
     </div>
   );
 };
 
-const Mountpoints = () => {
-
-	// const [audioElement] = useState(new Audio());
-  // const [station, setStation] = useState();
-  // const [playing, setPlaying] = useState(false);
-
-  // const [metadata, setMetadata] = useState(SELECT_STATION);
-  // const [codecInfo, setCodecInfo] = useState();
-  // const [icecast, setIcecast] = useState();
-
-  return (
-    <>
-			<IcecastApp />		
-    </>
-  
-   
-  )
-}
-
-
-
-export default React.memo(Mountpoints);
+export default React.memo(Player);
