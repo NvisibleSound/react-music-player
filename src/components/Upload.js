@@ -1,7 +1,42 @@
-import React, {useState} from 'react';
+import React, { onChange, useState, createContext, Component } from 'react';
 import styles from './upload.module.css'
 import { Link } from 'react-router-dom';
 
+export const FormCtx = createContext({
+  fields: {},
+  errors: {}
+});
+
+// class Form extends Component {
+//   state = {
+//     fields: {},
+//     errors: {}
+//   };
+
+// 	setFields = (event, { id }) => {
+//     event.persist();
+
+//     console.log("add/update field value!");
+//   };
+
+//   render() {
+//     const { fields, errors } = this.state;
+
+//     const formCtx = {
+//       fields,
+//       errors,
+//       setFields: this.setFields
+//     };
+
+//     return (
+//       <form action="">
+//         <FormCtx.Provider value={formCtx}>
+//           {this.props.children}
+//         </FormCtx.Provider>
+//       </form>
+//     );
+//   }
+// }
 
 
 const TrackInfoContainer = () => {
@@ -16,18 +51,41 @@ const TrackInfoContainer = () => {
 			<div className={styles.filesize}>
 				file size (5mb)
 			</div>
-
-
 		</div>
-
 	)
-
 }
 
 
 
 
+
+
 const Upload = () => {
+	const [AlbumName, setAlbumName] = useState('Album Name');
+	const [ReleaseDate, setReleaseDate] = useState('Release Date');
+	const [Artist, setArtist] = useState('Artist');
+	const [AboutThisAlbum, setAboutThisAlbum] = useState('About This Album');
+	const [AlbumCredits, setAlbumCredits] = useState('Album Credits');
+	const [Tags, setTags] = useState('Tags');
+	const [AlbumUPC, setAlbumUPC] = useState('Album UPC/EAN Code');
+	const [CatalogNumber, setCatalogNumber] = useState('Catalog Number');
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const upload = { 
+			Artist, 
+			AlbumName, 
+			ReleaseDate,
+			AboutThisAlbum,
+			AlbumCredits,
+			Tags,
+			AlbumUPC,
+			CatalogNumber
+		}	
+
+			console.log(upload)
+	}
+
   return ( 
     	<div className={styles.upload}>
 				<form className={styles.uploadForm}>
@@ -35,35 +93,67 @@ const Upload = () => {
 						<div className= {styles.albumPhoto}>
 							photo
 						</div>
-						<label>
-							<input className={styles.albumName} type="text" value="Album Name" />
-						</label>
-						<label>
-							Release Date:
-							<input className={styles.releaseDate} type="text" value="Release Date" />
-						</label>
-						<label>
-							<input className={styles.artist} type="text" value="Artist" />
-						</label>								
-						<label>
-							<input className={styles.aboutThisAlbum} type="text" value="About this album" />
-						</label>
-						<label>
-			
-							<input className={styles.albumCredits} type="text" value="Album Credits" />
-						</label>
-						<label>
-						
-							<input className={styles.tags} type="text" value="Tags" />
-						</label>
-						<label>
-					
-							<input className={styles.albumUPC} type="text" value="Album UPC/EAN code" />
-						</label>
-						<label>
-						
-							<input className={styles.catalogNumber} type="text" value="Catalog number" />
-						</label>
+						{/* <label>Album Name</label> */}
+							<input 
+								className={styles.albumName} 
+								required
+								type="text"	
+								value= { AlbumName } 
+								onChange={(e) => setAlbumName(e.target.value)}
+							/>
+						{/* <label>	Release Date: </label> */}
+							<input 
+								className={styles. releaseDate} 
+								required
+								type="text"	
+								value= { ReleaseDate } 
+								onChange={(e) => setReleaseDate(e.target.value)}
+							/>
+						{/* <label> Artist </label> */}
+							<input 
+								className= {styles.artist} required
+								required
+								type="text"	
+								value= { Artist } 
+								onChange={(e) => setArtist(e.target.value)}
+							/>														
+						{/* <label> About This Album </label> */}
+							<input 
+								className={styles.aboutThisAlbum} 
+								required
+								type="text"	
+								value= { AboutThisAlbum } 
+								onChange={(e) => setAboutThisAlbum(e.target.value)}
+							/>
+						{/* <label> Album Credits </label> */}
+							<input 
+								className={styles.albumCredits} 
+								required
+								type="text"	
+								value= { AlbumCredits } 
+								onChange={(e) => setAlbumCredits(e.target.value)}
+							/>
+						{/* <label> Tags </label>						 */}
+							<input 
+								className={styles.tags} required
+								type="text"	
+								value= { Tags } 
+								onChange={(e) => setTags(e.target.value)}
+							/>		
+						{/* <label>  Album UPC/EAN code </label> */}
+							<input 
+								className={styles.albumUPC} 
+								required
+								type="text"	
+								value= { AlbumUPC } 
+								onChange={(e) => setAlbumUPC(e.target.value)} />
+						{/* <label> Catalog number</label>					 */}
+							<input 
+								className={styles.catalogNumber} 
+								required
+								type="text"	
+								value= { CatalogNumber } 
+								onChange={(e) => setCatalogNumber(e.target.value)} />
 					</div>
 				</form>
 				<div className={styles.column2}>
@@ -92,10 +182,18 @@ const Upload = () => {
 									</div>
 								</input> */}
 							</div>				
+				<p> {AlbumName} </p>
+				<p> {ReleaseDate}</p>
+				<p> {Artist}</p>
+				<p> {AboutThisAlbum}</p>
+				<p> {AlbumCredits}</p>
+				<p> {AlbumUPC}</p>
+				<p> {CatalogNumber}</p>
         </table>
 									<div className={styles.buttons}>
 									<input className={styles.cancel} type="submit" value="Cancel" />
-									<input className={styles.submit} type="submit" value="Submit" />
+									<input className={styles.submit} type="submit" value="Submit" onClick={handleSubmit} 
+									/>
 								</div>
 							</div>
 			</div>
